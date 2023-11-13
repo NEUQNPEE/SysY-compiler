@@ -1,0 +1,30 @@
+int times = 0;
+  
+
+int copy(int n)
+{
+        times = times + 1;
+        printf("%d: %d\n", times, n);
+        return n;
+}
+
+int main()
+{
+        int a, b, c, i;
+        i = getint();
+
+        while (i > 0)
+        {
+                a = getint();
+                b = getint();
+                c = getint();
+                if (a == b && b == c || copy(a) > b && copy(b) > c || copy(a) < copy(b)  && copy(b) < copy(c) )
+                {  printf("true\n"); }
+                else
+                { printf("false\n"); }
+                i = i - 1;
+
+        }
+
+        return 0;
+}

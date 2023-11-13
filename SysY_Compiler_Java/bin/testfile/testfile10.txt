@@ -1,0 +1,27 @@
+const int arrc[3][2] = {{1,2},{3,4},{5,6}};
+  
+void printArr1(int arr[], int n) {
+    int i = 0;
+    while (i < n) {
+        printf("arr[%d]:%d\n", i, arr[i]);
+        i = i + 1;
+    }
+}
+void printArr2(int arr[][arrc[0][1]], int n) {
+    int i = 0;
+    while(i < n) {
+        int j = 0;
+        while(j < 2){
+            printf("arr[%d][%d]:%d\n", i, j, arr[i][j]);
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+}
+int main() {
+    int arr[3][2] = {{1, 2},{3, 0},{5, arrc[2][1]}};
+    arr[1][1] = 4;
+    printArr1(arr[0], 2);
+    printArr2(arr, 3);
+    return 0;
+}

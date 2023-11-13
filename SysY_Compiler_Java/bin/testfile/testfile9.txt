@@ -1,0 +1,58 @@
+// test "arrayParam2D in function"
+const int length = 10;
+
+void setArray2D(int array[][10], int size)
+// void setArray2D(int array[][length], int size)
+{
+        int i = 0, j = 0, mod;
+        mod = getint();
+
+        while(i < size)
+        {
+                j = 0;
+                while (j < length)
+                {
+                        array[i][j] = i * j % mod;
+                        j = j + 1;
+                }
+                i = i + 1;
+        }
+        return;
+}
+
+int getArray1DSum(int array[], int size)
+{
+        int sum = 0, i = 0;
+
+        while (i < size)
+        {
+                sum = sum + array[i];
+                i = i + 1;
+        }
+        return sum;
+
+}
+
+int getArray2DSum(int array[][10], int size)
+{
+        int sum = 0, i = 0;
+
+        while (i < size)
+        {
+                sum = sum + getArray1DSum(array[i], 10);
+                i = i + 1;
+        }
+        return sum;
+}
+
+int main()
+{
+        int data[10][10], sum;
+
+        setArray2D(data, 10);
+
+        sum = getArray2DSum(data, 10);
+        printf("%d\n", sum);
+        return 0;
+}
+         
